@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Appointment Scheduler</title>
+		<link rel="stylesheet" href="/styles/styles.css" />
+	</head>
+
+	<body>
+		<form action="/submit" method="POST" id="form">
+			<label for="fname">First name:</label><br />
+			<input type="text" id="fname" name="fname" /><br />
+			<span id="err-fname" class="error">Cannot be empty</span><br />
+
+			<label for="lname">Last name:</label><br />
+			<input type="text" id="lname" name="lname" /><br />
+			<span id="err-lname" class="error">Cannot be empty</span><br />
+
+			<label for="date">Date:</label><br />
+			<input type="datetime-local" id="date" name="date" /><br />
+			<span id="err-date" class="error">Cannot be empty</span><br />
+
+			<label for="time">Time:</label><br />
+			<input type="datetime-local" id="time" name="time" /><br />
+			<span id="err-time" class="error">Cannot be empty</span><br />
+
+			<input type="submit" value="Submit" id="submit-btn" />
+		</form>
+
+		<script src="/js/appointment.js"></script>
+	</body>
+</html>

@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 
 app.post("/submit", (req, res) => {
 	const newAppointment = {
-		name: req.body.fname,
+		fname: req.body.fname,
 		lname: req.body.lname,
 		date: req.body.date,
 		time: req.body.time,

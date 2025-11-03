@@ -15,6 +15,9 @@ const appointments = [];
 
 app.get("/", (req, res) => {
 	res.sendFile(`${import.meta.dirname}/views/appointment.html`);
+});
+
+app.get("/hello", (req, res) => {
 	res.send("Hello World!");
 });
 

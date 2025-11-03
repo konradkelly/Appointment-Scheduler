@@ -11,16 +11,16 @@ app.use(express.urlencoded({ extended: true }));
 //Define the port number where our server will listen
 const PORT = 3006;
 
+const appointments = [];
+
 app.get("/", (req, res) => {
 	res.sendFile(`${import.meta.dirname}/views/appointment.html`);
 });
 
 app.post("/submit", (req, res) => {
-	const appointments = [];
-
 	const newAppointment = {
 		name: req.body.fname,
-		email: req.body.lname,
+		lname: req.body.lname,
 		date: req.body.date,
 		time: req.body.time,
 		createdAt: new Date().toISOString(),
@@ -28,10 +28,15 @@ app.post("/submit", (req, res) => {
 
 	appointments.push(newAppointment);
 	console.log(appointments);
+	res.redirect("/confirmation.html");
 });
 
 app.get("/admin", (req, res) => {
 	res.send(appointments);
+});
+
+app.get("/confirmation.html", (req, res) => {
+	res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
 });
 
 //Start the server and make it listen on the port
